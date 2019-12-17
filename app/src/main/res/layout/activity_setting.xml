@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:orientation="vertical"
+    tools:context=".ui.user.UserActivity">
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/blue">
+
+        <ImageView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/backarrow"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="设置"
+            android:textColor="@color/white"
+            android:textSize="@dimen/big_size" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/user_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:drawableRight="@drawable/ico_arrow_gray"
+        android:padding="14dp"
+        android:text="个人信息设置"
+        android:textColor="@color/black"
+        android:textSize="@dimen/info_size" />
+
+    <TextView
+        android:id="@+id/area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:drawableRight="@drawable/ico_arrow_gray"
+        android:padding="14dp"
+        android:text="服务范围设置"
+        android:textColor="@color/black"
+        android:textSize="@dimen/info_size" />
+
+    <LinearLayout
+        android:id="@+id/cache"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:padding="14dp"
+            android:text="清除缓存"
+            android:textColor="@color/black"
+            android:textSize="@dimen/info_size" />
+
+        <TextView
+            android:id="@+id/memory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:drawableRight="@drawable/ico_arrow_gray"
+            android:padding="14dp"
+            android:text="已使用0MB  "
+            android:textColor="@color/text_yy"
+            android:textSize="@dimen/info_size" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:padding="14dp"
+            android:text="版本更新"
+            android:textColor="@color/black"
+            android:textSize="@dimen/info_size" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:drawableRight="@drawable/ico_arrow_gray"
+            android:padding="14dp"
+            android:text="V1.0.0  "
+            android:textColor="@color/text_yy"
+            android:textSize="@dimen/info_size" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/help"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:drawableRight="@drawable/ico_arrow_gray"
+        android:padding="14dp"
+        android:text="帮助反馈"
+        android:textColor="@color/black"
+        android:textSize="@dimen/info_size" />
+
+    <TextView
+        android:id="@+id/about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:drawableRight="@drawable/ico_arrow_gray"
+        android:padding="14dp"
+        android:text="关于我们"
+        android:textColor="@color/black"
+        android:textSize="@dimen/info_size" />
+
+    <TextView
+        android:id="@+id/exit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="25dp"
+        android:background="@color/blue"
+        android:gravity="center"
+        android:padding="14dp"
+        android:text="退出登录"
+        android:textColor="@color/white"
+        android:textSize="@dimen/info_size" />
+</LinearLayout>

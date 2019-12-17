@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:scrollbars="none">
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/blue">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/backarrow"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="提现结果"
+            android:textColor="@color/white"
+            android:textSize="@dimen/big_size" />
+
+        <ImageView
+            android:id="@+id/what"
+            android:background="@drawable/ico_doubt02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_gravity="center"
+            android:background="@drawable/out_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="提现成功"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/Big_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/money"
+            android:text="成功转出0元到指定账户"
+            android:layout_marginBottom="200dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/info_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/close"
+            android:paddingStart="80dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="80dp"
+            android:paddingBottom="15dp"
+            android:text="返回"
+            android:background="@drawable/bg_bk_black"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/info_size"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</RelativeLayout>

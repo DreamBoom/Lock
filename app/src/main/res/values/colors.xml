@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#397BE6</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="black">#323232</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#ffffff</color>
+    <color name="hide">#44000000</color>
+    <color name="blue00">#10154fb5</color>
+    <color name="blue">#154fb5</color>
+    <color name="blue_web">#367bf0</color>
+    <color name="red">#eb3a54</color>
+    <color name="bluePoint">#1561fd</color>
+    <color name="blueTop">#397BE6</color>
+    <color name="et_grey">#f9f9f9</color>
+    <color name="grey">#f0f0f0</color>
+    <color name="text_gray">#a4aab7</color>
+    <color name="text_sys">#808080</color>
+    <color name="unclick">#c6c6c6</color>
+    <color name="no_color">#afafaf</color>
+    <color name="background">#f5f5f5</color>
+    <color name="NormalColor">#cccccc</color>
+    <color name="text_yy">#7a7a7a</color>
+</resources>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.Splash">
+
+    <include layout="@layout/title" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey"
+        android:padding="14dp"
+        android:text="上传证件照(资料必须真实有效，图片清晰)"
+        android:textColor="@color/black"
+        android:textSize="@dimen/info_size" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="14dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:text="手持身份证照片"
+            android:textColor="@color/black"
+            android:textSize="@dimen/info_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:text="*"
+            android:textColor="@color/red"
+            android:textSize="@dimen/info_size" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.lock.utils.SquareLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="14dp"
+            android:layout_weight="1"
+            android:background="@drawable/shouchishenfenzheng" />
+
+        <com.lock.utils.SquareLayout
+            android:id="@+id/take_sfz"
+            android:layout_width="0dp"
+            android:background="@drawable/bg_bk_grey"
+            android:layout_height="match_parent"
+            android:layout_margin="14dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/im_camera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ico_camera" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/im_camera"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:text="手持身份证"
+                android:textColor="@color/black"
+                android:textSize="@dimen/info_size" />
+
+            <ImageView
+                android:id="@+id/sc"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.lock.utils.SquareLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="14dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:text="身份证正反面"
+            android:textColor="@color/black"
+            android:textSize="@dimen/info_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:text="*"
+            android:textColor="@color/red"
+            android:textSize="@dimen/info_size" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.lock.utils.SquareLayout
+            android:id="@+id/take_zm"
+            android:layout_width="0dp"
+            android:background="@drawable/bg_bk_grey"
+            android:layout_height="match_parent"
+            android:layout_margin="14dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/im_sfz1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ico_camera" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/im_sfz1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:text="正面"
+                android:textColor="@color/black"
+                android:textSize="@dimen/info_size" />
+            <ImageView
+                android:id="@+id/zm"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.lock.utils.SquareLayout>
+
+        <com.lock.utils.SquareLayout
+            android:id="@+id/take_fm"
+            android:layout_width="0dp"
+            android:background="@drawable/bg_bk_grey"
+            android:layout_height="match_parent"
+            android:layout_margin="14dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/im_sfz2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ico_camera" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/im_sfz2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:text="反面"
+                android:textColor="@color/black"
+                android:textSize="@dimen/info_size" />
+            <ImageView
+                android:id="@+id/fm"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.lock.utils.SquareLayout>
+    </LinearLayout>
+</LinearLayout>

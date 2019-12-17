@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="距离到达结束还有"
+        android:textColor="@color/black"
+        android:textSize="@dimen/hos_size" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="85dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_bg"
+            android:padding="10dp"
+            android:text="00"
+            android:textColor="@color/white"
+            android:textSize="@dimen/info_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="时"
+            android:textColor="@color/black"
+            android:textSize="@dimen/info_size" />
+
+        <TextView
+            android:id="@+id/tv_minute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_bg"
+            android:padding="10dp"
+            android:text="00"
+            android:textColor="@color/white"
+            android:textSize="@dimen/info_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="分"
+            android:textColor="@color/black"
+            android:textSize="@dimen/info_size" />
+
+        <TextView
+            android:id="@+id/tv_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_bg"
+            android:padding="10dp"
+            android:text="00"
+            android:textColor="@color/white"
+            android:textSize="@dimen/info_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="秒"
+            android:textColor="@color/black"
+            android:textSize="@dimen/info_size" />
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/progress1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:clickable="false"
+        android:max="100"
+        android:maxHeight="46dp"
+        android:minHeight="46dp"
+        android:progress="0"
+        android:progressDrawable="@drawable/bg_forgotpassword_seekbar"
+        android:thumb="@drawable/hk"
+        android:thumbOffset="-8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:text="到达目的地"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/big_size" />
+</RelativeLayout>

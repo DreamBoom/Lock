@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context=".ui.user.UserActivity">
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/blue">
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:src="@drawable/backarrow"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="消息中心"
+            android:textColor="@color/white"
+            android:textSize="@dimen/big_size" />
+
+        <ImageView
+            android:id="@+id/more"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/dd"
+            tools:ignore="RtlHardcoded" />
+    </RelativeLayout>
+
+
+    <ListView
+        android:id="@+id/list_ms"
+        android:layout_below="@+id/title"
+        android:background="@color/white"
+        android:layout_margin="15dp"
+        android:scrollbars="none"
+        android:dividerHeight="0.8dp"
+        android:divider="@color/grey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:id="@+id/choose"
+        android:layout_below="@+id/title"
+        android:visibility="gone"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/dhk"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/sys"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ico_erweima"
+            android:gravity="center"
+            android:text="扫一扫"
+            android:textColor="@color/text_yy"
+            android:textSize="@dimen/info_size" />
+
+
+        <TextView
+            android:id="@+id/setting"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/sz"
+            android:gravity="center"
+            android:text="设置"
+            android:textColor="@color/text_yy"
+            android:textSize="@dimen/info_size" />
+    </LinearLayout>
+
+</RelativeLayout>
