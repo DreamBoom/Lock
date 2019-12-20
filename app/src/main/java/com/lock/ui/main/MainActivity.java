@@ -192,16 +192,12 @@ public class MainActivity extends MVPBaseActivity<MainContract.View, MainPresent
         ButterKnife.bind(this);
     }
 
-    private int click = 0;
 
     @OnClick({R.id.header, R.id.rest, R.id.banner, R.id.tv_sta1, R.id.tv_sta2, R.id.more_order})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.header:
-                if (click == 0) {
-                    click = 1;
-                    mainPresenter.toUser(this);
-                }
+                mainPresenter.toUser(this);
                 break;
             case R.id.rest:
                 int i = mk.decodeInt(Tool.mstatus, -1);
@@ -213,10 +209,7 @@ public class MainActivity extends MVPBaseActivity<MainContract.View, MainPresent
                 }
                 break;
             case R.id.banner:
-                if (click == 0) {
-                    click = 1;
-                    mainPresenter.toLockUp(this);
-                }
+                mainPresenter.toLockUp(this);
                 break;
             case R.id.tv_sta1:
                 mainPresenter.toTv1(this);
@@ -225,10 +218,7 @@ public class MainActivity extends MVPBaseActivity<MainContract.View, MainPresent
                 mainPresenter.toTv2(this, title);
                 break;
             case R.id.more_order:
-                if (click == 0) {
-                    click = 1;
-                    mainPresenter.toOrder(this);
-                }
+                mainPresenter.toOrder(this);
                 break;
         }
     }
@@ -251,7 +241,6 @@ public class MainActivity extends MVPBaseActivity<MainContract.View, MainPresent
     @Override
     protected void onResume() {
         super.onResume();
-        click = 0;
         mainPresenter.headerShow(this);
     }
 }

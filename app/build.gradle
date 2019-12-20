@@ -5,17 +5,17 @@ android {
         debugConfig {
             keyAlias 'key0'
             keyPassword '3266316'
-            storeFile file('H:/Lock/lock.jks')
+            storeFile file('H:/Lock/Lock/lock.jks')
             storePassword '3266316'
         }
         release {
             keyAlias 'key0'
             keyPassword '3266316'
-            storeFile file('H:/Lock/lock.jks')
+            storeFile file('H:/Lock/Lock/lock.jks')
             storePassword '3266316'
         }
         debug {
-            storeFile file('H:/Lock/lock.jks')
+            storeFile file('H:/Lock/Lock/lock.jks')
             storePassword '3266316'
             keyAlias = 'key0'
             keyPassword '3266316'

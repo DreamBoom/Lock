@@ -20,7 +20,7 @@ import butterknife.OnClick;
  */
 
 public class SettingActivity extends MVPBaseActivity<SettingContract.View, SettingPresenter>
-        implements SettingContract.View{
+        implements SettingContract.View {
 
     private SettingPresenter presenter;
     private TextView memory;
@@ -45,12 +45,14 @@ public class SettingActivity extends MVPBaseActivity<SettingContract.View, Setti
         presenter.initMemory(this);
     }
 
-    private int click = 0;
-    @OnClick({R.id.user_info, R.id.area, R.id.cache, R.id.version, R.id.help, R.id.about, R.id.exit})
+    @OnClick({R.id.header, R.id.user_info, R.id.area, R.id.cache, R.id.version, R.id.help, R.id.about, R.id.exit})
     public void onViewClicked(View view) {
         switch (view.getId()) {
+            case R.id.header:
+                finish();
+                break;
             case R.id.user_info:
-                Toast.makeText(this,"敬请期待",Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "敬请期待", Toast.LENGTH_LONG).show();
                 break;
             case R.id.area:
                 presenter.setArea(this);
@@ -59,13 +61,13 @@ public class SettingActivity extends MVPBaseActivity<SettingContract.View, Setti
                 presenter.clean(this);
                 break;
             case R.id.version:
-                Toast.makeText(this,"已是最新版本",Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "已是最新版本", Toast.LENGTH_LONG).show();
                 break;
             case R.id.help:
                 presenter.help(this);
                 break;
             case R.id.about:
-                Toast.makeText(this,"敬请期待",Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "敬请期待", Toast.LENGTH_LONG).show();
                 break;
             case R.id.exit:
                 presenter.exit(this);
@@ -76,12 +78,12 @@ public class SettingActivity extends MVPBaseActivity<SettingContract.View, Setti
 
     @SuppressLint("SetTextI18n")
     @Override
-    public void getMemory(long i,int p) {
-        if(p == 0){
-            memory.setText("已使用"+i+"MB  ");
-        }else {
-            Toast.makeText(this,"已请理至最佳状态",Toast.LENGTH_LONG).show();
-            memory.setText("已使用"+i+"MB  ");
+    public void getMemory(long i, int p) {
+        if (p == 0) {
+            memory.setText("已使用" + i + "MB  ");
+        } else {
+            Toast.makeText(this, "已请理至最佳状态", Toast.LENGTH_LONG).show();
+            memory.setText("已使用" + i + "MB  ");
         }
     }
 }

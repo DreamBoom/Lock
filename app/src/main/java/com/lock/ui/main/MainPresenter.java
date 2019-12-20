@@ -70,6 +70,12 @@ public class MainPresenter extends BasePresenterImpl<MainContract.View> implemen
     @Override
     public void headerShow(Activity act) {
         int s = mk.decodeInt(Tool.mstatus, -1);
+        boolean b = mk.decodeBool(Tool.rest, false);
+        if(b){
+            mView.stopWork();
+        }else {
+            mView.startWork();
+        }
         if (utils == null) {
             utils = new ActivityUtils(act);
         }

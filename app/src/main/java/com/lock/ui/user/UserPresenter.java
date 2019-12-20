@@ -19,6 +19,7 @@ import com.alibaba.fastjson.TypeReference;
 import com.lock.R;
 import com.lock.adapter.OrderAdapter;
 import com.lock.base.App;
+import com.lock.bean.ExitBean;
 import com.lock.bean.OrderListBean;
 import com.lock.mvp.BasePresenterImpl;
 import com.lock.net.BaseHttpCallBack;
@@ -159,5 +160,58 @@ public class UserPresenter extends BasePresenterImpl<UserContract.View> implemen
         });
         promess.setContentView(v);
         promess.showAsDropDown(tv);
+    }
+
+    @Override
+    public void checkRest(Activity act, boolean rest) {
+        if (rest) {
+            startService(act);
+        } else {
+            stopService(act);
+        }
+    }
+
+    private void startService(Activity act) {
+        utils.getload(act);
+        String token = mk.decodeString(Tool.tokenId, "");
+        HttpRequestPort.getInstance().startService(token, new BaseHttpCallBack(act) {
+            @Override
+            public void onSuccess(String data) {
+                super.onSuccess(data);
+                ExitBean bean = JSONObject.parseObject(data, new TypeReference<ExitBean>() {
+                });
+                if (bean.isSuccess()) {
+                    mView.startWork();
+                }
+            }
+
+            @Override
+            public void onFinished() {
+                super.onFinished();
+                utils.hindload();
+            }
+        });
+    }
+
+    private void stopService(Activity act) {
+        utils.getload(act);
+        String token = mk.decodeString(Tool.tokenId, "");
+        HttpRequestPort.getInstance().stopService(token, new BaseHttpCallBack(act) {
+            @Override
+            public void onSuccess(String data) {
+                super.onSuccess(data);
+                ExitBean bean = JSONObject.parseObject(data, new TypeReference<ExitBean>() {
+                });
+                if (bean.isSuccess()) {
+                    mView.stopWork();
+                }
+            }
+
+            @Override
+            public void onFinished() {
+                super.onFinished();
+                utils.hindload();
+            }
+        });
     }
 }

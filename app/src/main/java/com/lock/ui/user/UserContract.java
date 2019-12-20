@@ -15,6 +15,8 @@ import com.lock.mvp.BaseView;
 public class UserContract {
     interface View extends BaseView {
         void orderNum(String i);
+        void startWork();
+        void stopWork();
     }
 
     interface  Presenter extends BasePresenter<View> {
@@ -25,5 +27,6 @@ public class UserContract {
         void setting(Activity act);
         void message(Activity act);
         void money(Activity act, TextView tv);
+        void checkRest(Activity act,boolean rest);
     }
 }

@@ -13,7 +13,7 @@ import com.lock.mvp.BaseView;
  *  邮箱 784787081@qq.com
  */
 
-public class HistoryContract {
+class HistoryContract {
    interface View extends BaseView {
     }
 

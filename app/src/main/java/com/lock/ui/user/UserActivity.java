@@ -16,6 +16,9 @@ import com.lock.utils.Tool;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import static com.lock.ui.Splash.mk;
+
 /**
  * MVPPlugin
  * 邮箱 784787081@qq.com
@@ -75,7 +78,7 @@ public class UserActivity extends MVPBaseActivity<UserContract.View, UserPresent
                 presenter.Order(this);
                 break;
             case R.id.ll_Money:
-                presenter.money(this,tvLockStart);
+                presenter.money(this, tvLockStart);
                 break;
             case R.id.ll_order:
                 presenter.Order2(this);
@@ -90,10 +93,10 @@ public class UserActivity extends MVPBaseActivity<UserContract.View, UserPresent
                 presenter.lockUp(this);
                 break;
             case R.id.im_lock_end:
-                // imLockEnd.setBackground(ContextCompat.getDrawable(this,R.drawable.tbg));
+                presenter.checkRest(this, true);
                 break;
             case R.id.im_lock_start:
-
+                presenter.checkRest(this, false);
                 break;
             case R.id.header:
                 finish();
@@ -105,12 +108,12 @@ public class UserActivity extends MVPBaseActivity<UserContract.View, UserPresent
     protected void onResume() {
         super.onResume();
         presenter.init(this);
-        //    boolean rest = mk.decodeBool(Tool.rest, false);
-//        if (rest) {
-//
-//        } else {
-//
-//        }
+        boolean rest = mk.decodeBool(Tool.rest, false);
+        if (rest) {
+            stopWork();
+        } else {
+            startWork();
+        }
     }
 
     @Override
@@ -121,5 +124,19 @@ public class UserActivity extends MVPBaseActivity<UserContract.View, UserPresent
     @Override
     public void orderNum(String i) {
         orderNum.setText(i);
+    }
+
+    @Override
+    public void startWork() {
+        imLockStart.setBackground(ContextCompat.getDrawable(this, R.drawable.ico_lock02));
+        imLockEnd.setBackground(ContextCompat.getDrawable(this, R.drawable.tx));
+        mk.encode("rest",false);
+    }
+
+    @Override
+    public void stopWork() {
+        imLockStart.setBackground(ContextCompat.getDrawable(this, R.drawable.lock_blue));
+        imLockEnd.setBackground(ContextCompat.getDrawable(this, R.drawable.lock_gray));
+        mk.encode("rest",true);
     }
 }

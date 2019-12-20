@@ -1,13 +1,10 @@
 package com.lock.ui.order.history;
 
-
-import android.content.Context;
 import android.view.View;
 import android.widget.ListView;
 
 import com.lock.R;
 import com.lock.mvp.MVPBaseFragment;
-import com.lock.ui.order.incomplete.IncompletePresenter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 /**

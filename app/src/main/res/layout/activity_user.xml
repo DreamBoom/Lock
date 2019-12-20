@@ -336,8 +336,8 @@
                 android:id="@+id/im_lock_start"
                 android:layout_toStartOf="@+id/line"
                 android:background="@drawable/lock_blue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_width="55dp"
+                android:layout_height="55dp" />
             <ImageView
                 android:id="@+id/line"
                 android:layout_centerInParent="true"
@@ -348,8 +348,8 @@
                 android:id="@+id/im_lock_end"
                 android:layout_toEndOf="@+id/line"
                 android:background="@drawable/lock_gray"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_width="55dp"
+                android:layout_height="55dp" />
         </RelativeLayout>
         <RelativeLayout
             android:layout_marginTop="6dp"

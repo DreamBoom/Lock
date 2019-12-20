@@ -47,7 +47,6 @@ public class MessageActivity extends MVPBaseActivity<MessageContract.View, Messa
         presenter.init(this,list);
     }
 
-    private int click = 0;
     @OnClick({R.id.more, R.id.sys, R.id.setting,R.id.close})
     public void onViewClicked(View view) {
         switch (view.getId()) {
@@ -59,26 +58,16 @@ public class MessageActivity extends MVPBaseActivity<MessageContract.View, Messa
                 }
                 break;
             case R.id.sys:
-                if (click == 0) {
-                    click = 1;
-                    presenter.toSys();
-                }
+                choose.setVisibility(View.GONE);
+                presenter.toSys();
                 break;
             case R.id.setting:
-                if (click == 0) {
-                    click = 1;
-                    presenter.toSetting();
-                }
+                choose.setVisibility(View.GONE);
+                presenter.toSetting();
                 break;
             case R.id.close:
                 finish();
                 break;
         }
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        click = 0;
     }
 }

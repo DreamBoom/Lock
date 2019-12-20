@@ -31,8 +31,8 @@ public class HelpPresenter extends BasePresenterImpl<HelpContract.View> implemen
     @Override
     public ArrayList<Fragment> list() {
         ArrayList<Fragment> fragments = new ArrayList<>();
-        fragments.add(new QuestionFragment());
         fragments.add(new LearnFragment());
+        fragments.add(new QuestionFragment());
         return fragments;
     }
 

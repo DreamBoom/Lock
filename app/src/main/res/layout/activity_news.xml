@@ -6,6 +6,29 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.News">
+    <RelativeLayout
+        android:background="@color/blue"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+        <ImageView
+            android:id="@+id/close"
+            android:src="@drawable/backarrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:layout_marginLeft="10dp"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:textColor="@color/white"
+            android:text="新闻"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/big_size"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
     <TextView
         android:layout_marginTop="15dp"
         android:text="新闻"
