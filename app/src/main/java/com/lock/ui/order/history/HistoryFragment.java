@@ -35,6 +35,7 @@ public class HistoryFragment extends MVPBaseFragment<HistoryContract.View, Histo
     @Override
     protected void initDate() {
         presenter = new HistoryPresenter();
+        presenter.getList(getActivity(), i, listview,true);
        // refresh.setEnableOverScrollDrag(true);
         refresh.setOnRefreshListener(refreshLayout -> {
             i = 1;
@@ -49,11 +50,11 @@ public class HistoryFragment extends MVPBaseFragment<HistoryContract.View, Histo
     }
 
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        i = 1;
-        presenter.getList(getActivity(), i, listview,true);
-    }
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//        i = 1;
+//        presenter.getList(getActivity(), i, listview,true);
+//    }
 
 }

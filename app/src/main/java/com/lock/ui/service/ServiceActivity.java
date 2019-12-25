@@ -52,7 +52,6 @@ public class ServiceActivity extends MVPBaseActivity<ServiceContract.View, Servi
     private TextView tv_title, tv_m1, tv_m2, tv_m3, tv_m4, tv_m5, tv_m6, tv1, tv2, tv3;
     private ActivityUtils utils;
     private File f3, f1, f2;
-    private String phone;
     private String orderId;
     private TextView in_money;
     private LinearLayout l3;
@@ -76,7 +75,6 @@ public class ServiceActivity extends MVPBaseActivity<ServiceContract.View, Servi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
-        phone = getIntent().getStringExtra("phone");
         orderId = getIntent().getStringExtra("orderId");
         in_money = findViewById(R.id.in_money);
         im_xs = findViewById(R.id.im_xs);
@@ -115,7 +113,7 @@ public class ServiceActivity extends MVPBaseActivity<ServiceContract.View, Servi
                 finish();
                 break;
             case R.id.phone:
-                presenter.call(phone, tv_title);
+                presenter.call("18061420000", tv_title);
                 break;
             case R.id.im_xs:
                 paymentType = "1";
@@ -305,5 +303,10 @@ public class ServiceActivity extends MVPBaseActivity<ServiceContract.View, Servi
         double i = aDouble1 - aDouble2 + aDouble3;
         tv_m2.setText(fee);
         in_money.setText("" + i);
+    }
+
+    @Override
+    public void fs() {
+        finish();
     }
 }

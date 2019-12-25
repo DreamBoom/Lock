@@ -11,6 +11,7 @@ import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.graphics.drawable.ColorDrawable;
+import android.widget.Toast;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
@@ -33,11 +34,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.lock.ui.Splash.mk;
-
-/**
- * MVPPlugin
- * 邮箱 784787081@qq.com
- */
 
 public class MainPresenter extends BasePresenterImpl<MainContract.View> implements MainContract.Presenter {
     private ActivityUtils utils;
@@ -71,9 +67,9 @@ public class MainPresenter extends BasePresenterImpl<MainContract.View> implemen
     public void headerShow(Activity act) {
         int s = mk.decodeInt(Tool.mstatus, -1);
         boolean b = mk.decodeBool(Tool.rest, false);
-        if(b){
+        if (b) {
             mView.stopWork();
-        }else {
+        } else {
             mView.startWork();
         }
         if (utils == null) {
@@ -98,6 +94,9 @@ public class MainPresenter extends BasePresenterImpl<MainContract.View> implemen
                 break;
             case 9:
                 mView.status9();
+                break;
+            default:
+
                 break;
         }
     }
@@ -314,7 +313,7 @@ public class MainPresenter extends BasePresenterImpl<MainContract.View> implemen
         ColorDrawable dw = new ColorDrawable(0x00000000);
         popup.setBackgroundDrawable(dw);
         sure.setOnClickListener(v -> {
-            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:13462439645"));
+            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:18061420000"));
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             act.startActivity(intent);
         });

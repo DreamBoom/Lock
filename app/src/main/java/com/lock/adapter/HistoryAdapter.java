@@ -5,13 +5,21 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.TypeReference;
 import com.lock.R;
+import com.lock.bean.CallMoneyBean;
 import com.lock.bean.OrderListBean;
+import com.lock.net.BaseHttpCallBack;
 import com.lock.net.HttpRequestPort;
 import com.lock.ui.orderinfo.OrderInfoActivity;
+import com.lock.utils.Tool;
 
 import java.util.ArrayList;
+
+import static com.lock.ui.Splash.mk;
 
 /**
  * @author wmx
@@ -61,6 +69,16 @@ public class HistoryAdapter extends CommonAdapter<OrderListBean.ModuleBean> {
             act.startActivity(intent);
         });
         holder.getView(R.id.order_get).setOnClickListener(v -> {
+                String tokenId = mk.decodeString(Tool.tokenId, "");
+                HttpRequestPort.getInstance().orderState(tokenId, data.getId()+"","push", new BaseHttpCallBack(act) {
+                    @Override
+                    public void onSuccess(String data) {
+                        super.onSuccess(data);
+                        CallMoneyBean bean = JSONObject.parseObject(data, new TypeReference<CallMoneyBean>() {});
+                        Toast.makeText(act,bean.getMessage(),Toast.LENGTH_LONG).show();
+                    }
+
+                });
 
         });
     }

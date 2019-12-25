@@ -71,7 +71,7 @@ public class HelpActivity extends MVPBaseActivity<HelpContract.View, HelpPresent
                 finish();
                 break;
             case R.id.call:
-                presenter.call(this,"18888888888",title);
+                presenter.call(this,"18061420000",title);
                 break;
         }
     }

@@ -34,6 +34,8 @@ public class OrderInfoContract {
         void putInfo(Activity act,String phone,String orderId);
         void setLocationCallBack(Activity act, AMap aMap,double lat, double lgt, TextView tv,String orderId);
         void call(String phone,TextView view);
+        void call(TextView view);
+        void callMoney(String orderId);
         void stopTime(long time);
         void orderStart();
         void orderArrive();

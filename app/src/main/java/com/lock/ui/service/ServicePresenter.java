@@ -65,7 +65,6 @@ public class ServicePresenter extends BasePresenterImpl<ServiceContract.View> im
     private double m4 = 0;
     private double m5 = 0;
     private double m6 = 0;
-
     @Override
     public void init(Activity act, String orderId) {
         this.act = act;
@@ -116,62 +115,91 @@ public class ServicePresenter extends BasePresenterImpl<ServiceContract.View> im
             utils.showToast("请至少上传一张图片");
             return;
         }
-        if (TextUtils.isEmpty(m1)) {
-            m1 = "0";
-        }
-        if (TextUtils.isEmpty(m2)) {
-            m2 = "0";
-        }
-        if (TextUtils.isEmpty(m3)) {
-            m3 = "0";
-        }
-        if (TextUtils.isEmpty(m4)) {
-            m4 = "0";
-        }
-        if (TextUtils.isEmpty(m5)) {
-            m5 = "0";
-        }
-        if (TextUtils.isEmpty(m6)) {
-            m6 = "0";
-        }
-
         UpBean upBean = new UpBean();
         upBean.setId(Integer.valueOf(orderId));
         upBean.setPaymentType(Integer.valueOf(paymentType));
         ArrayList<UpBean.ItemsBean> list = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
             UpBean.ItemsBean itemsBean = new UpBean.ItemsBean();
-            itemsBean.setCid(i + 1);
-            itemsBean.setNumber(1);
-            itemsBean.setFeeId(i + 1);
-            itemsBean.setFeeType(i + 1);
+
             switch (i + 1) {
                 case 1:
-                    itemsBean.setItemPriceDesc(m1);
-                    itemsBean.setTotalAmountDesc(m1);
+                    if (!"0.00".equals(m1)) {
+                        itemsBean.setCid("1");
+                        itemsBean.setNumber(1+"");
+                        itemsBean.setFeeId(i + 1+"");
+                        itemsBean.setFeeType(i + 1+"");
+                        itemsBean.setItemPriceDesc(m1);
+                        itemsBean.setTotalAmountDesc(m1);
+                        list.add(itemsBean);
+                    }
+//                    else {
+//                        itemsBean.setCid("");
+//                        m1 = "0.00";
+//                    }
+
                     break;
                 case 2:
-                    itemsBean.setItemPriceDesc(m2);
-                    itemsBean.setTotalAmountDesc(m2);
+                    if (!"0.00".equals(m2)) {
+                        itemsBean.setCid("2");
+                        itemsBean.setNumber(1+"");
+                        itemsBean.setFeeId(i + 1+"");
+                        itemsBean.setFeeType(i + 1+"");
+                        itemsBean.setItemPriceDesc(m2);
+                        itemsBean.setTotalAmountDesc(m2);
+                        list.add(itemsBean);
+                    }
+
                     break;
                 case 3:
-                    itemsBean.setItemPriceDesc(m3);
-                    itemsBean.setTotalAmountDesc(m3);
+                    if (!"0.00".equals(m3)) {
+                        itemsBean.setCid("3");
+                        itemsBean.setNumber(1+"");
+                        itemsBean.setFeeId(i + 1+"");
+                        itemsBean.setFeeType(i + 1+"");
+                        itemsBean.setItemPriceDesc(m3);
+                        itemsBean.setTotalAmountDesc(m3);
+                        list.add(itemsBean);
+                    }
+
                     break;
                 case 4:
-                    itemsBean.setItemPriceDesc(m4);
-                    itemsBean.setTotalAmountDesc(m4);
+                    if (!"0.00".equals(m4)) {
+                        itemsBean.setCid("4");
+                        itemsBean.setNumber(1+"");
+                        itemsBean.setFeeId(i + 1+"");
+                        itemsBean.setFeeType(i + 1+"");
+                        itemsBean.setItemPriceDesc(m4);
+                        itemsBean.setTotalAmountDesc(m4);
+                        list.add(itemsBean);
+                    }
                     break;
                 case 5:
-                    itemsBean.setItemPriceDesc(m5);
-                    itemsBean.setTotalAmountDesc(m5);
+                    if (!"0.00".equals(m5)) {
+                        itemsBean.setCid("5");
+                        itemsBean.setNumber(1+"");
+                        itemsBean.setFeeId(i + 1+"");
+                        itemsBean.setFeeType(i + 1+"");
+                        itemsBean.setItemPriceDesc(m5);
+                        itemsBean.setTotalAmountDesc(m5);
+                        list.add(itemsBean);
+                    }
+
                     break;
                 case 6:
-                    itemsBean.setItemPriceDesc(m6);
-                    itemsBean.setTotalAmountDesc(m6);
+                    if (!"0.00".equals(m6)) {
+                        itemsBean.setCid("6");
+                        itemsBean.setNumber(1+"");
+                        itemsBean.setFeeId(i + 1+"");
+                        itemsBean.setFeeType(i + 1+"");
+                        itemsBean.setItemPriceDesc(m6);
+                        itemsBean.setTotalAmountDesc(m6);
+                        list.add(itemsBean);
+                    }
+
                     break;
             }
-            list.add(itemsBean);
+
         }
         upBean.setItems(list);
         String s = JSON.toJSONString(upBean);
@@ -180,11 +208,12 @@ public class ServicePresenter extends BasePresenterImpl<ServiceContract.View> im
             @Override
             public void onSuccess(String data) {
                 super.onSuccess(data);
-//                ServiceBean bean = JSONObject.parseObject(data, new TypeReference<ServiceBean>() {
-//                });
-//                if (bean.isSuccess()) {
-//
-//                }
+                ExitBean bean = JSONObject.parseObject(data, new TypeReference<ExitBean>() {
+                });
+                utils.showToast(bean.getMessage());
+                if (bean.isSuccess()) {
+                    mView.fs();
+                }
             }
 
             @Override

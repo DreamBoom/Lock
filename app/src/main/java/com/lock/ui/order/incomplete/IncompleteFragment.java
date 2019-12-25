@@ -37,6 +37,7 @@ public class IncompleteFragment extends MVPBaseFragment<IncompleteContract.View,
     @Override
     protected void initDate() {
         presenter = new IncompletePresenter();
+        presenter.getList(getActivity(),i,listview,true);
       //  refresh.setEnableOverScrollDrag(false);
         refresh.setOnRefreshListener(refreshLayout -> {
             i = 1;
@@ -50,12 +51,12 @@ public class IncompleteFragment extends MVPBaseFragment<IncompleteContract.View,
         });
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        i = 1;
-        presenter.getList(getActivity(),i,listview,true);
-    }
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//        i = 1;
+//        presenter.getList(getActivity(),i,listview,true);
+//    }
 
     @Override
     public void finish() {

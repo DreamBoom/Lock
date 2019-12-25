@@ -142,6 +142,11 @@ public class OrderInfoActivity extends MVPBaseActivity<OrderInfoContract.View, O
             case 6:
                 //等待付款
                 r6.setVisibility(View.VISIBLE);
+                if(money.equals("未填写")){
+                    r6Money.setText("费用0.0元");
+                }else {
+                    r6Money.setText("费用"+money+"元");
+                }
                 address.setText("订单详情");
                 break;
             case 7:
@@ -224,7 +229,7 @@ public class OrderInfoActivity extends MVPBaseActivity<OrderInfoContract.View, O
     private int click = 0;
 
     @OnClick({R.id.main, R.id.message, R.id.phone, R.id.r3_put_info, R.id.r7_call, R.id.r7_delete,
-            R.id.r3_cancel, R.id.r4_change, R.id.r4_start})
+            R.id.r3_cancel, R.id.r6_call,R.id.r6_call_money,R.id.r4_change, R.id.r4_start})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.main:
@@ -260,6 +265,12 @@ public class OrderInfoActivity extends MVPBaseActivity<OrderInfoContract.View, O
                 break;
             case R.id.r3_cancel:
                 presenter.cancelOrder(jl, orderId);
+                break;
+            case R.id.r6_call:
+                presenter.call(jl);
+                break;
+            case R.id.r6_call_money:
+                presenter.callMoney(orderId);
                 break;
         }
     }
@@ -314,6 +325,7 @@ public class OrderInfoActivity extends MVPBaseActivity<OrderInfoContract.View, O
     public void cancel() {
         finish();
     }
+
 
     @Override
     public void arrive() {

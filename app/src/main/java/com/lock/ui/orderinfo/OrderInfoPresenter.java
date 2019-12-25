@@ -47,6 +47,7 @@ import com.amap.api.services.route.WalkRouteResult;
 import com.amap.api.services.route.WalkStep;
 import com.lock.R;
 import com.lock.base.App;
+import com.lock.bean.CallMoneyBean;
 import com.lock.bean.ExitBean;
 import com.lock.bean.FeeBean;
 import com.lock.bean.FeeListBean;
@@ -239,10 +240,9 @@ public class OrderInfoPresenter extends BasePresenterImpl<OrderInfoContract.View
             public void onSuccess(String data) {
                 super.onSuccess(data);
                 ExitBean bean = JSONObject.parseObject(data, new TypeReference<ExitBean>() {});
+                Toast.makeText(act, bean.getMessage(), Toast.LENGTH_SHORT).show();
                 if (bean.isSuccess()) {
                     mView.end();
-                } else {
-                    Toast.makeText(act, "请求失败，请刷新重试", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -363,6 +363,11 @@ public class OrderInfoPresenter extends BasePresenterImpl<OrderInfoContract.View
         showPop(act, phone);
         popup.showAtLocation(view, Gravity.NO_GRAVITY, 0, 0);
     }
+    @Override
+    public void call(TextView view) {
+        showPop(act,"18061420000");
+        popup.showAtLocation(view, Gravity.NO_GRAVITY, 0, 0);
+    }
 
     private PopupWindow popCancel;
     @SuppressLint("SetTextI18n")
@@ -394,6 +399,26 @@ public class OrderInfoPresenter extends BasePresenterImpl<OrderInfoContract.View
             public void onSuccess(String data) {
                 super.onSuccess(data);
                 mView.cancel();
+            }
+
+            @Override
+            public void onFinished() {
+                super.onFinished();
+                utils.hindload();
+            }
+        });
+    }
+
+    @Override
+     public void callMoney(String orderId) {
+        utils.getload(act);
+        String tokenId = mk.decodeString(Tool.tokenId, "");
+        HttpRequestPort.getInstance().orderState(tokenId, orderId,"push", new BaseHttpCallBack(act) {
+            @Override
+            public void onSuccess(String data) {
+                super.onSuccess(data);
+                CallMoneyBean bean = JSONObject.parseObject(data, new TypeReference<CallMoneyBean>() {});
+                utils.showToast(bean.getMessage());
             }
 
             @Override

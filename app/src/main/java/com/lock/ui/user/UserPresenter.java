@@ -178,8 +178,7 @@ public class UserPresenter extends BasePresenterImpl<UserContract.View> implemen
             @Override
             public void onSuccess(String data) {
                 super.onSuccess(data);
-                ExitBean bean = JSONObject.parseObject(data, new TypeReference<ExitBean>() {
-                });
+                ExitBean bean = JSONObject.parseObject(data, new TypeReference<ExitBean>() {});
                 if (bean.isSuccess()) {
                     mView.startWork();
                 }
@@ -200,8 +199,7 @@ public class UserPresenter extends BasePresenterImpl<UserContract.View> implemen
             @Override
             public void onSuccess(String data) {
                 super.onSuccess(data);
-                ExitBean bean = JSONObject.parseObject(data, new TypeReference<ExitBean>() {
-                });
+                ExitBean bean = JSONObject.parseObject(data, new TypeReference<ExitBean>() {});
                 if (bean.isSuccess()) {
                     mView.stopWork();
                 }

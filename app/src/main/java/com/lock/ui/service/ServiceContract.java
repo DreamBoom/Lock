@@ -23,6 +23,7 @@ public class ServiceContract {
         void fee(String m,String m1,String m2,String m3,String m4,String m5,String m6,
                  ArrayList<FeeListBean.ModuleBean> list);
         void feeMoney(String fee);
+        void fs();
     }
 
     interface  Presenter extends BasePresenter<View> {

@@ -49,42 +49,42 @@ public class UpBean implements Serializable {
          * totalAmountDesc : 50.00
          */
 
-        private int cid;
-        private int feeType;
-        private int feeId;
-        private int number;
+        private String cid;
+        private String feeType;
+        private String feeId;
+        private String number;
         private String itemPriceDesc;
         private String totalAmountDesc;
 
-        public int getCid() {
+        public String getCid() {
             return cid;
         }
 
-        public void setCid(int cid) {
+        public void setCid(String cid) {
             this.cid = cid;
         }
 
-        public int getFeeType() {
+        public String getFeeType() {
             return feeType;
         }
 
-        public void setFeeType(int feeType) {
+        public void setFeeType(String feeType) {
             this.feeType = feeType;
         }
 
-        public int getFeeId() {
+        public String getFeeId() {
             return feeId;
         }
 
-        public void setFeeId(int feeId) {
+        public void setFeeId(String feeId) {
             this.feeId = feeId;
         }
 
-        public int getNumber() {
+        public String getNumber() {
             return number;
         }
 
-        public void setNumber(int number) {
+        public void setNumber(String number) {
             this.number = number;
         }
 
